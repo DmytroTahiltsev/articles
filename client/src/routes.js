@@ -6,7 +6,7 @@ import { DetailPage } from './pages/DetailPage'
 import { AuthPage } from './pages/AuthPage'
 
 
-export const UseRoutes = isAuthenticated => {
+export const useRoutes = isAuthenticated => {
     if(isAuthenticated){
         return(
             <Switch>
