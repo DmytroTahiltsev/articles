@@ -1,5 +1,6 @@
 {
     "port":5000,
     "mongoUrl":"mongodb+srv://Dima:Dima1604@cluster0.el1pf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "jwtSecret":"key23819yek"
+    "jwtSecret":"key23819yek",
+    "baseUrl":"http://localhost:5000"
 }

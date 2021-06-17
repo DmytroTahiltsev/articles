@@ -48,15 +48,15 @@ export const AuthPage = ()=>{
                         <span className="card-title">Авторизация</span>
                         <div>
                             <div className="input-field">
-                                <input placeholder="Введить email" id="email" type="text" name="email" onChange={changeHandler} />
+                                <input placeholder="Введить email" id="email" type="text" name="email" value={form.email} onChange={changeHandler} />
                                 <label htmlFor="email">Email</label>
                             </div>
                             <div className="input-field">
-                                <input placeholder="Введить имя" id="username" type="text" name="username" onChange={changeHandler} />
+                                <input placeholder="Введить имя" id="username" type="text" name="username" value={form.username} onChange={changeHandler} />
                                 <label htmlFor="username">Имя</label>
                             </div>
                             <div className="input-field">
-                                <input placeholder="Введить пароль" id="password" type="password" name="password" onChange={changeHandler} />
+                                <input placeholder="Введить пароль" id="password" type="password" name="password" value={form.password} onChange={changeHandler} />
                                 <label htmlFor="password">Пароль</label>
                             </div>
                         </div>

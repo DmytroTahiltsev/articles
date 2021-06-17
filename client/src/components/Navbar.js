@@ -9,12 +9,13 @@ export const Navbar = () => {
         event.preventDefault()
         auth.logout()
         history.push('/')
+
     }
     return(
         <nav>
-            <div class="nav-wrapper blue darken-2" style={{padding: '0 1.5rem'}}>
-                <a href="/" class="brand-logo">Title</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <div className="nav-wrapper blue darken-2" style={{padding: '0 1.5rem'}}>
+                <a href="/" className="brand-logo">Title</a>
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><NavLink to="/create">Создать</NavLink></li>
                     <li><NavLink to="/links">Список</NavLink></li>
                     <li><a href="/" onClick={logoutHandler}>Выйти</a></li>
