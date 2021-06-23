@@ -19,7 +19,7 @@ router.post('/create', auth, async (req, res) => {
 })
 router.get('/', auth, async (req, res) => {
     try{
-        const articles = Article.find({ owner: req.user.userId })
+        const articles = await Article.find({ owner: req.user.userId })
         res.json(articles)
     }catch(e){
         res.status(500).json({message:"Что-то пошло не так"})
@@ -27,7 +27,7 @@ router.get('/', auth, async (req, res) => {
 })
 router.get('/:id', auth, async (req, res) => {
     try{
-        const article = Article.findById(req.params.id)
+        const article = await Article.findById(req.params.id)
         res.json(article)
     }catch(e){
         res.status(500).json({message:"Что-то пошло не так"})
