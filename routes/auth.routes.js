@@ -77,4 +77,15 @@ router.post(
             res.status(500).json({message:"Что-то пошло не так"})
         }
 })
+router.get(
+    '/user/:id',
+    async (req, res) => {
+        try{
+            const user = await User.findOne({_id: req.params.id})
+            res.json(user)
+        }catch(e){
+            res.status(500).json({message:"Что-то пошло не так"})
+        }
+    }
+)
 module.exports = router

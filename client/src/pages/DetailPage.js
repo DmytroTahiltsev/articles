@@ -9,6 +9,7 @@ export const DetailPage = ()=>{
     const {token} = useContext(AuthContext)
     const {request, loading} = useHttp()
     const [article, setArticle] = useState('')
+    const [user, setUser] = useState('')
     const articleId = useParams().id
 
     const getArticle = useCallback(async ()=>{
@@ -18,6 +19,11 @@ export const DetailPage = ()=>{
             })
             console.log(fetched)
             setArticle(fetched)
+            const fetchedUser = await request(`/api/auth/user/${fetched.owner}`, 'GET', null, {
+                Authorization: `Bearer ${token}`
+            })
+            setUser(fetchedUser)
+            console.log(fetchedUser)
         }catch(e){}
     }, [token, articleId, request])
 
@@ -29,7 +35,7 @@ export const DetailPage = ()=>{
     }
     return(
         <>
-            {!loading && article && <ArticleCard article={article} />}
+            {!loading && article && <ArticleCard article={article} user={user} />}
         </>
     )
 }
